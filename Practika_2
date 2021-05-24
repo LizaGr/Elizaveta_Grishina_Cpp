@@ -1,0 +1,255 @@
+/* 1. Для заданного числа n найти ближайшее целое, которое делится
+на b. Если таких чисел несколько, то найти наибольшее. */
+#include <iostream>
+using namespace std;
+ 
+int main() {
+int n, b, a;
+cin >> n >> b;
+a=n%b;
+if (b-a>a) n-=(b-a);
+else n+=(b-a);
+cout << n;
+	return 0;
+}
+
+
+/* 2. По двум введенным пользователем катетам вычислить длину
+гипотенузы.*/
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+int a, b;
+cin >> a >> b;
+cout << sqrt(a*a+b*b);
+	return 0;
+}
+
+/* 3. Найти сумму и произведение цифр трехзначного числа, которое
+вводит пользователь.*/
+#include <iostream>
+using namespace std;
+ 
+int main() {
+	int abc, a, b, c;
+	cin >> abc;
+	a=abc/100;
+	b=abc/10-a*10;
+	c=abc%10;
+	cout << a+b+c << endl << a*b*c;
+	return 0;
+}
+
+/* 4. По введенным пользователем координатам двух точек вывести
+уравнение прямой, проходящей через эти точки.*/
+#include <iostream>
+using namespace std;
+ 
+int main() {
+int x1, y1, x2, y2, k, b, x, y;
+cin >> x1 >> y1 >> x2 >> y2;
+//y=kx+b
+k=(y2-y1)/(x2-x1);
+b=y2-k*x2;
+cout << "y="<< k << "x+"<< b;
+	return 0;
+}
+
+/* 5. Рассчитать месячные выплаты (m) и суммарную выплату (s) по
+кредиту. О кредите известно, что он составляет n рублей, берется
+на y лет, под p процентов. */
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+float m, s, n, y, p;
+cin >> n >> y >> p;
+p/=100;
+m = (n * p * pow((1+p),y)) / (12 * (pow(1+p,y) - 1));
+s=m*y*12;
+cout << m << endl << s;
+	return 0;
+}
+
+
+/* 6. Пользователь вводит два числа. Одно присваивается одной
+переменной, а второе - другой. Необходимо поменять значения
+переменных так, чтобы значение первой оказалось во второй, а
+второй - в первой. */
+#include <iostream>
+using namespace std;
+ 
+int main() {
+int a, b;
+cin >> a >> b;
+b+=a;
+a=b-a;
+b=b-a;
+cout << a << endl << b;
+	return 0;
+}
+
+/* 7. Вводится четырёхзначное число (abcd). Вывести сумму ab + cd. */
+#include <iostream>
+using namespace std;
+ 
+int main() {
+int abcd, ab, cd;
+cin >> abcd;
+ab=abcd/100;
+cd=abcd%100;
+cout << ab+cd;
+	return 0;
+}
+
+/* 8. Допустим, организации часто требуется красить баки
+цилиндрической формы. При этом они красят только верхнюю часть 
+и стенки с внешней стороны. Организации требуется программа,
+которая бы определяла, сколько банок краски необходимо для
+покраски того или иного бака. */
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+int r, h, s, v, c;
+cin >> r >> h >> v >> c;
+//asin(0)=arcsin(0)=pi
+s=asin(0)*r*r+2*r*h*asin(0);
+cout << ceil(v/c);
+	return 0;
+}
+
+/* 9. Найти периметр: а) прямоугольника, ширина и длина вводятся с
+клавиатуры; б) треугольника, длины всех сторон вводятся с
+клавиатуры; в) произвольного четырехугольника, длины всех сторон
+вводятся с клавиатуры. */
+#include <iostream>
+using namespace std;
+ 
+int main() {
+int a, b;
+cin >> a >> b;
+cout << 2*(a+b);
+	return 0;
+}
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+float a, b, c, p, s;
+cin >> a >> b >> c;
+p=(a+b+c)/2;
+s=sqrt(p*(p-a)*(p-b)*(p-c));
+cout << s ;
+	return 0;
+}
+
+#include <iostream>
+using namespace std;
+ 
+int main() {
+int a, b, c, d;
+cin >> a >> b >> c >> d;
+cout >> a+b+c+d;
+	return 0;
+}
+
+/* 10.Найти объем шара радиуса R и площадь его поверхности. */
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+float v, r, s;
+cin >> r;
+v=(4*r*r*r*asin(0))/3;
+s=4*asin(0)*r*r;
+cout << v << endl << s;
+	return 0;
+}
+
+
+/* 11.Найти площадь поверхности и объем кругового цилиндра, радиус
+основания которого равен R, а высота h. */
+#1zAZLy  (строк: 12, размер: 190)  fork   скачать	79 days ago 
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+float s, v, r, h;
+cin >> r >> h;
+s=2*(r*h*asin(0)+asin(0)*r*r);
+v=asin(0)*r*r*h;
+cout << s << endl << v;
+	return 0;
+}
+
+
+/* 12.Найти площадь осевого сечения прямого кругового конуса с
+радиусом основания R и образующей L. */
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+float l, r, s, h;
+cin >> r >> l;
+h=sqrt(l*l-r*r);
+s=r*h;
+cout << s;
+	return 0;
+}
+
+/* 13.Найти площадь поверхности и объем прямого кругового конуса с
+радиусом основания R и высотой h. */
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+float r, h, s, v, l;
+cin >> r >> h;
+l=sqrt(r*r+h*h);
+s= asin(0)*r*l+asin(0)*r*r;
+v=asin(0)*r*r*h;
+cout << s << endl << v;
+	return 0;
+}
+
+/* 14.Сторона основания правильной треугольной пирамиды равна а, а
+высота – h. Найти площадь поверхности и объем пирамиды. */
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+	double s, a, v, h;
+	cin >> a >> h;
+	s=a*(a*sqrt(3)+6*h)/4;
+	cout << s;
+	return 0;
+}
+
+/* 15.Сторона основания правильной шестиугольной пирамиды равна а, а
+высота – h. Найти площадь поверхности и объем пирамиды.  */
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+double a, h, s, v, c, H;
+cin >> a >> h;
+c=sqrt(a*a+h*h);
+H=sqrt(c*c-(a*a)/4);
+s=6*a*a*sqrt(3)/4+6*a*H/2;
+v=a*a*h*sqrt(3)/2;
+cout << s << endl << v;
+	return 0;
+}
