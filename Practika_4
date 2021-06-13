@@ -116,14 +116,39 @@ cout << x;
 четных чисел на выборке не меньше 1000 случайных чисел. */
 #include <iostream>
 using namespace std;
-int main(){
-   int even=0;
-   for (i=0; i<1000; i++)
-      
+ 
+int main() {
+	float percent_of_even_numbers=0;
+	int random_number;
+ 
+	for(int i=0; i<1000; i++){
+	   random_number=rand();
+	   if ((random_number%2)==0)
+	      percent_of_even_numbers++;
+	}
+	percent_of_even_numbers/=10;
+	cout << percent_of_even_numbers;
+	return 0;
+}
 
+      
 /* 7. Напишите программу, доказывающую или проверяющую, что для
 множества натуральных чисел выполняется равенство:
 1+2+...+n = n(n+1)/2, где n - любое натуральное число.  */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, sum1=0, sum2;
+    cin >> n;
+    
+    for( int i=1; i<(n+1); i++)
+       sum1+=i;
+    sum2=n*(n+1)/2;
+    cout << sum1 << " = " << sum2;
+	return 0;
+}
 
 
 /* 8. В программе генерируется случайное целое число от 0 до 100.
@@ -131,11 +156,29 @@ int main(){
 каждой неудачной попытки должно сообщаться больше или меньше
 введенное пользователем число, чем то, что загадано. Если за 10
 попыток число не отгадано, то вывести загаданное число. */
-
-
-/* 9. Вывести на экран коды и символы таблицы ASCII, начиная с символа
-под номером 32 и заканчивая 127-м включительно. Вывод выполнить
-в табличной форме: по десять пар "код-символ" в каждой строке. */
+#include <iostream>
+ 
+using namespace std;
+ 
+int main() {
+  int true_number, input_number;
+  true_number=rand()%101;
+ 
+  for(int i=0; i<10; i++){
+  	cin >> input_number;
+  	if (input_number == true_number)
+  		break;
+  	if (input_number > true_number)
+  		cout << "Загаданное число меньше"<< endl;
+  	else if (input_number < true_number)
+  	    cout << "Загаданное число больше" << endl;
+  }
+  if (input_number == true_number)
+     cout << "Правильно";
+  else
+     cout << input_number;
+	return 0;
+}
 
 
 /* 10.Посчитать четные и нечетные цифры введенного натурального числа.
@@ -162,7 +205,20 @@ return 0;
 /* 11.Вывести на экран столько элементов ряда Фибоначчи, сколько указал
 пользователь. Например, если на ввод поступило число 6, то вывод
 должен содержать шесть первых чисел ряда Фибоначчи: 1 2 3 5 8 13. */
-
+#include <iostream>
+using namespace std;
+ 
+int main() {
+	int n, f1=1, f2=1, output;
+	cin >> n;
+	for(int i=0; i<n; i++){
+		output=f2;
+		f2+=f1;
+		f1=f2-f1;
+		cout << output <<endl;
+	}
+	return 0;
+}
 
 /* 12.Вывести на экран ряд натуральных чисел от минимума до максимума
 с шагом. Например, если минимум 10, максимум 35, шаг 5, то вывод
