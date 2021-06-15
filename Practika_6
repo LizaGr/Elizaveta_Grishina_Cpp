@@ -1,1 +1,99 @@
+/* 1. Написать функцию с одним целым параметром, возвращающую номер
+вызова этой функции (первый вызов возвращает 1, второй — 2, третий
+— 3, и т. д.). */
+
+#include <iostream>
+
+using namespace std;
+
+
+int out()
+{
+	int i;
+	i++;
+	cout << i << endl;
+}
+int main()
+{
+	out();
+	out();
+	out();
+	
+	return 0;
+}
+
+
+
+/*2. Написать процедуру без параметров, при первом вызове печатающую
+«Good morning!», при втором — «Good afternoon!», при третьем —
+«Good evening!», при четвертом — снова «Good morning!», и далее по
+циклу. */
+
+
+#include <iostream>
+
+using namespace std;
+
+
+int out()
+{
+	int i;
+	i++;
+	if (i%3==1)
+	   cout << "Good morning!" << endl;
+	else if (i%3==2)
+	   cout << "Good afternoon!" << endl;
+	else if (i%3==0)
+	   cout << "Good evening!" << endl;
+}
+int main()
+{
+	out();
+	out();
+	out();
+	
+	return 0;
+}
+
+
+
+
+/*3. Написать функцию, управляющую целочисленным значением
+следующим образом: сначала значение равно 0, и при каждом вызове
+устанавливается новое значение (равное значению параметра), и
+возвращается старое.  */
+
+
+#include <iostream>
+
+using namespace std;
+
+
+int x,y, i, a;
+int out(int a){
+	
+	i++;
+	
+	if(i == 1){
+		x = 0;
+		y = m;
+	}
+	else{
+		x = y;
+		y = m;
+	}
+	cout << x << endl;
+}
+int main(){
+
+	cin >> a;
+	out(a);
+	
+	return 0;
+}
+
+
+
+
+
 
